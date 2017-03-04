@@ -1,0 +1,159 @@
+<!--
+	Moja pierwsza strona - główna strona KropTech.net 
+	Data ukończenia: 08.03.2016r.
+	Wersja: v.3.0
+	Języki: HTML5, CSS3, JavaScript (jQuery), PHP
+-->
+
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Obróbka zdjęć / filmów | KropTech</title>
+	
+	<meta name="description" content="Obróbka zdjęć oraz montaż filmów!" />
+	<meta name="keywords" content="grafika, zdjęcia, filmy, montaż, obróbka, tanio, Września" />
+	
+	<link rel="Stylesheet" href="style.css" type="text/css" /> 
+	<link rel="Stylesheet" href="css/fontello.css" type="text/css" /> 
+	<link rel="Shortcut icon" href="img/favicon.ico" />
+	<link href='https://fonts.googleapis.com/css?family=Dosis:400,600|Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+</head>
+
+										<!-- BODY -->
+
+<body>
+
+<div class="wrapper">
+
+	<header class="mainHeader">
+	
+		<div class="mainLogo">
+			<div class="logoText">
+				<h1 class="logoNapis">KropTech.net</h1>
+				<p class="logoPodpis">Twoje centrum pomocy informatycznej!<p>
+			</div>
+		</div>
+		
+		<div class="mainLogoImg">
+			<div class="logoImage"><img class="logoImg" src="img/responsive-logo.png"/></div>
+		</div>
+		
+		<nav class="nav">
+			
+			<span class="nav-btn"><i class="icon-menu"></i> MENU</span>
+			<ul class="navList">
+				<li class="active"><a href="oferta">Oferta</a>
+					<ul>
+						<li><a href="zestawy-komputerowe"><p class="text-lista-rozwijana">Składanie zestawów<br />komputerowych</p></a></li>
+						<li><a href="naprawa-komputerow"><p class="text-lista-rozwijana">Naprawa komputerów</p></a></li>
+						<li class="active"><a href="obrobka-zdjec-filmow"><p class="text-lista-rozwijana">Obróbka zdjęć<br /> / montaż filmów</p></a></li>
+						<li><a href="grafika-rysunki-plakaty"><p class="text-lista-rozwijana">Grafika / Rysunki / Plakaty</p></a></li>
+						<li><a href="tworzenie-stron-internetowych"><p class="text-lista-rozwijana">Tworzenie witryn<br /> internetowych</p></a></li>
+					</ul>
+				</li>
+				<li><a href="portfolio">Portfolio</a></li>
+				<li><a href="projekty">Projekty</a></li>
+				<li style="display: none;"></li>
+				<li><a href="kontakt">Kontakt</a>
+					<ul>
+						<li><a href="ekipa">Nasza ekipa <i class="icon-emo-beer"></i></a></li>
+					</ul>
+				</li>
+				<li><a href="https://web.facebook.com/kroptech" target="_blank" title="Polub nas na Facebook'u!"><i class="icon-facebook-official"></i></a></li>
+				<li><a href="https://www.youtube.com/channel/UCQVn-n2wUUY2sIVphQcRP2Q" target="_blank" title="Subskrybuj nasz kanał!"><i class="icon-youtube-squared"></i></a></li>
+			</ul>
+		</nav>
+	
+	</header>
+	
+										<!-- KONTENT -->
+	
+	<div class="mainContent">
+		
+		<div class="content_wrapper">
+			<article class="mainArticle_aside">
+				<content class="textContent">
+					<h3>Obróbka zdjęć / montaż filmów*:</h3>
+					<table>
+						<tbody>
+							<tr>
+								<td>Obróbka zdjęć / grafiki</td>
+								<td class="cena_cell"><span class="ceny">10-50zł **</span></td>
+							</tr>
+							<tr>
+								<td>Podstawowy montaż filmów</td>
+								<td class="cena_cell"><span class="ceny">15-100zł **</span></td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="podTabela">* jeśli masz problem, który nie został wymieniony w tabeli - <span style="color: #d45f5f; font-weight: 700;">napisz do nas!</span></p>
+					<p class="podTabela">** każdy przypadek rozpatrywany jest indywidualnie! Szczegóły ustalamy po wcześniejszym kontakcie.</span></p>
+				</content>
+			</article>
+			
+			<aside class="video_aside">
+				<h2 class="textVideo">Zobacz krótki film:</h2>
+				<div class="mainVideoWrapperAside">
+					<div class="videoWrapper">
+						<iframe src="https://www.youtube.com/embed/9MFSPAJqDt8"></iframe>
+					</div>
+				</div>
+			</aside>
+		</div>
+		<div style="clear: both;"></div>	
+	</div>
+	
+	<footer class="mainFooter">
+		<p class="textFooter">Bartosz Kropidłowski &nbsp &copy; 2016 &nbsp&nbsp|&nbsp&nbsp  Wszelkie prawa zastrzeżone  &nbsp&nbsp|&nbsp &nbsp <i class="icon-mail-alt"></i> kroptechnet@gmail.com</p>
+	</footer>
+	
+</div>
+	
+										<!-- Skrypty JS -->
+	
+	<script src="jquery-1.12.1.min.js"></script>
+
+	<script>
+
+	$(document).ready(function() {
+	   var stickyNavTop = $('nav').offset().top;
+
+	   var stickyNav = function(){
+	   var scrollTop = $(window).scrollTop();
+
+	   if (scrollTop > stickyNavTop) { 
+		  $('nav').addClass('sticky');
+	   } else {
+		  $('nav').removeClass('sticky');
+		}
+	   };
+
+	   stickyNav();
+
+	   $(window).scroll(function() {
+		  stickyNav();
+	   });
+	   });
+	   
+	   $('span.nav-btn').click(function()
+	   {
+			$('ul.navList').slideToggle();
+	   })
+	   
+	   $(window).resize(function()
+	   {
+			if ($(window).width() > 1010)
+			{
+				$('ul.navList').removeAttr('style');
+			}
+	   })
+	   
+	</script>
+	
+</body>
+</html>

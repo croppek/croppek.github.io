@@ -1,0 +1,19 @@
+### PROTECT FILES ###
+<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+RewriteEngine on
+RewriteRule oferta index.html
+RewriteRule portfolio portfolio.html
+RewriteRule projekty projekty.html
+RewriteRule kontakt kontakt.php
+RewriteRule ekipa nasza_ekipa.html
+RewriteRule zestawy-komputerowe skladanie_zestawow.html
+RewriteRule naprawa-komputerow naprawa_komputerow.html
+RewriteRule obrobka-zdjec-filmow obrobka_grafiki.html
+RewriteRule grafika-rysunki-plakaty grafika.html
+RewriteRule tworzenie-stron-internetowych tworzenie_witryn.html
+RewriteRule blad-wysylania-wiadomosci error.html
+RewriteRule wiadomosc-wyslana-pomyslnie potwierdzenie.html
