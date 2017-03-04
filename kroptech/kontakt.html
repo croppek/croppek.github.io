@@ -61,7 +61,7 @@
 				<li><a href="portfolio.html">Portfolio</a></li>
 				<li><a href="projekty.html">Projekty</a></li>
 				<li style="display: none;"></li>
-				<li class="active"><a href="kontakt.php">Kontakt</a>
+				<li class="active"><a href="kontakt.html">Kontakt</a>
 					<ul>
 						<li><a href="nasza_ekipa.html">Nasza ekipa <i class="icon-emo-beer"></i></a></li>
 					</ul>
@@ -107,16 +107,6 @@
         
 					<label>Imie i nazwisko:</label>
 					<input name="name" placeholder="Jan kowalski">
-                        
-                        <?php
-                            
-                            if(isset($_SESSION['e_nick']))
-                            {
-                                echo '<div class="form_error">'.$_SESSION['e_nick'].'</div>';
-                                unset($_SESSION['e_nick']);
-                            }
-                    
-                        ?>
 							
 					<label>E-mail:</label>
 					<input name="email" type="email" placeholder="przyklad@poczta.pl">
