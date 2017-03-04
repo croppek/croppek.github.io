@@ -1,0 +1,326 @@
+										/* Stylizacja strony dev.croppek.pl + obsługa responsywności */
+
+body
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Patrick Hand', cursive;
+    background-image: url('IMG/bg/bg_level1.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+#content_wrapper
+{
+    margin: 0;
+    padding: 0;
+}
+
+#mobile_info
+{
+    display: none;
+    position: absolute;
+    z-index: 15;
+    height: 400px;
+    width: 860px;
+    background-color: rgb(47, 79, 79);
+    color: white;
+    font-size: 1.7em;
+    text-align: center;
+    padding: 80px 20px 20px;
+    text-shadow:
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#game_container
+{
+    position: fixed;
+    width: 900px; /* Set your desired with */
+    height: 500px;
+    z-index: 1; /* Make sure its above other items. */
+    top: 50%;
+    left: 50%;
+    margin-top: -275px; /* Changes with height. */
+    margin-left: -450px; /* Your width divided by 2. */
+
+    padding: 0px;
+    border: 5px solid #555555;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+#player
+{
+    position: absolute;
+    z-index: 5;
+    left: 20px;
+    top: 440px;
+    display: block;
+    height: 48px;
+    width: 48px;
+    padding: 0;
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.level
+{
+    width: 900px;
+    height: 500px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.object
+{
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #6d0000;
+    padding: 0;
+    margin: 0;
+    /*visibility: hidden;*/
+}
+
+#informacje_o_grze
+{
+    display: none;
+    height: 280px;
+    width: 310px;
+    background-color: none;
+    z-index: 3;
+    position: absolute;
+    left: 275px;
+    top: 50px;
+    color: #fff;
+    text-align: justify;
+    padding: 25px;
+    margin: 0;
+    font-size: 18px;
+    text-shadow:
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#kod_do_formularza
+{
+    display: none;
+    height: 250px;
+    width: 330px;
+    background-color: rgba(95, 24, 24, 0);
+    z-index: 3;
+    position: absolute;
+    left: 275px;
+    top: 50px;
+    color: #fff;
+    text-align: justify;
+    padding: 50px 10px 10px;
+    margin: 0;
+    font-size: 1.3em;
+    text-shadow:
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#kod_do_pokoju
+{
+    font-family: 'Comfortaa', cursive;
+    display: none;
+    height: 300px;
+    width: 300px;
+    background-image: url("IMG/metal-texture.jpg");
+    background-color: #747474;
+    z-index: 3;
+    position: absolute;
+    left: 275px;
+    top: 50px;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    border-radius: 10px;
+    border: 2px solid rgba(25, 25, 25, 0.7);
+}
+
+#formularz_kontaktowy
+{
+    font-family: 'Comfortaa', cursive;
+    font-size: 17px;
+    display: none;
+    height: 480px;
+    width: 880px;
+    background-color: rgb(8, 0, 103);
+    z-index: 10;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    background: #606c88;
+    background: -moz-linear-gradient(top,  #606c88 0%, #3f4c6b 100%);
+    background: -webkit-linear-gradient(top,  #606c88 0%,#3f4c6b 100%);
+    background: linear-gradient(to bottom,  #606c88 0%,#3f4c6b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 );
+}
+
+.contact_text_input
+{
+    display: block;
+    padding: 5px;
+    margin: 5px auto 10px;
+}
+
+.close_popup
+{
+    display: block;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 25px;
+    float: right;
+}
+
+.close_popup:hover
+{
+    animation-name: krzyzyk;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+@keyframes krzyzyk
+{
+    0%
+    {   -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25%
+    {   -ms-transform: rotate(30deg);
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+    }
+    50%
+    {   -ms-transform: rotate(-30deg);
+        -webkit-transform: rotate(30deg);
+        transform: rotate(-30deg);
+    }
+    100%
+    {   -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+#jaskinia
+{
+    background-color: rgba(72, 72, 255, 0);
+    z-index: 6;
+}
+
+.button
+{
+    width: 130px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    outline: none;
+}
+
+input[type="text"],input[type="email"]
+{
+    text-align: center;
+}
+
+#kontakt_text_input
+{
+    text-align: justify;
+    padding: 10px;
+}
+
+.link_portfolio
+{
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    margin: 0;
+    /*visibility: hidden;*/
+}
+
+										/* !!!!!!!!!! max 240px (Small Mobile) !!!!!!!!!! */
+
+@media only screen and (max-width: 899px), screen and (max-height: 510px)
+{
+    
+    #content_wrapper
+    {
+        display: none;
+    }
+    
+    body
+    {
+        background-color: rgb(47, 79, 79);
+        background-image: none;
+    }
+    
+	#mobile_info
+    {
+        margin: 0;
+        display: block;
+        position: fixed;
+        overflow-y: auto;
+        z-index: 15;
+        height: 85%;
+        width: 90%;
+        background-color: rgb(47, 79, 79);
+        color: white;
+        font-size: 14px; 
+        font-size: 4vw;
+        text-align: center;
+        padding: 10% 5% 5%;
+        text-shadow:
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    }
+    
+    #email_text
+    {
+        color: rgb(255, 255, 255);
+        text-shadow: rgb(0, 0, 0) 0px 0px 10px;
+        font-weight: bold;
+        font-family: Helvetica;
+    }
+    
+										/* @@@@@ KONTENT (Small Mobile) @@@@@ */
+	
+	
+}

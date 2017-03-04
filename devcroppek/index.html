@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Dev - Croppek</title>
+	
+	<meta name="description" content='Web developer myślący "poza pudełkiem" oraz własnym stylem. ;)' />
+	<meta name="keywords" content="webmaster, developer, strony, internetowe, rwd" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Patrick+Hand" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="IMG/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="IMG/favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="engine/game.js"></script>
+    <script src="engine/others.js"></script>
+	
+</head>
+
+<body>
+	
+    <div id="mobile_info">Wygląda na to, że korzystasz z urządzenia mobilnego.<br/>Niestety moja "gra" nie jest jeszcze przystosowana do użytkowania na tego typu urządzeniach..<br/><br/>Jeśli potrzebujesz pilnego kontaktu, możesz pominąć rozgrywkę i wysłać do mnie wiadomość w tradycyjny sposób na adres: <br/><br/><span id="email_text" style="word-break: break-all; font-size: 16px; font-size: 6vw; letter-spacing: 2px;">dev.croppek@gmail.com</span></div>
+    
+    <div id="content_wrapper">
+        
+        <div id="game_container">
+            
+            <!-- _-_-_-_-_-_ LEVEL 1 _-_-_-_-_-_ -->
+            
+            
+            <div id="level1" class="level" style='background-image: url("IMG/levels/level1.jpg");'>
+                
+                <!-- płotek dookoła informacji o sterowaniu (lewa część planszy) 
+                <div class="object" style="left: 0px; top: 420px; height: 10px; width: 350px;"></div>
+                <div class="object" style="left: 340px; top: 160px; height: 260px; width: 10px;"></div>
+                <div class="object" style="left: 0px; top: 150px; height: 10px; width: 350px;"></div> -->
+                
+                <!-- wejście do jaskini (level2) 
+                <div class="object" style="left: 0px; top: 15px; height: 120px; width: 60px;"></div> -->
+                <div class="object" id="jaskinia" style='left: 0px; top: 0px; height: 150px; width: 150px; background-image: url("IMG/levels/jaskinia.png");'></div>
+                
+                <!-- obiekty na prawej części planszy 
+                <div class="object" style="left: 500px; top: 260px; height: 90px; width: 400px;"></div>
+                <div class="object" style="left: 500px; top: 0px; height: 150px; width: 130px;"></div>
+                <div class="object" style="left: 770px; top: 0px; height: 150px; width: 130px;"></div> -->
+                
+                <!-- tablica z informacjami o grze 
+                <div class="object" style="left: 730px; top: 360px; height: 130px; width: 150px;"></div> -->
+                <div id="informacje_o_grze" style='background-image: url("IMG/levels/tablica.png");'><span style="font-size: 1.5em; margin-left: 85px; font-weight: bold; display: block; margin-bottom: -6px;">INFORMACJE</span><br /><span style="display: block; margin-bottom: -6px;">Aby wysłać wiadmość do developera Croppka, musisz udowodnić, że nie jesteś podszywającym się robotem!</span><br /><span style="display: block; margin-bottom: -6px;">Wykaż się odwagą i zdobądź tajny kod dostępu do formularza kontaktowego.</span><br /><span style="display: block; margin-bottom: -6px;"><b>Powodzenia!</b></span><br /><span style="font-size: 0.8em; font-style: italic;">Czas gry: około 1 minuta. ;)</span></div>
+                
+                <!-- komputer z formularzem kontaktowym 
+                <div class="object" style="left: 677px; top: 30px; height: 50px; width: 50px;"></div> -->
+                <div id="formularz_kontaktowy">
+                    
+                    <div class="close_popup">X</div>
+                    <div style="clear: both;"></div>
+                    
+                    <form style="margin-top: -20px;">
+                        <label class="label_kontakt" style="margin-left: 50px;">Imię i nazwisko:</label>
+                        <input id="kontakt_name_input" class="contact_text_input" type="text" name="kontakt_name" style="width: 250px; border-radius: 5px;" required="" placeholder="Jan Kowalski">
+
+                        <label class="label_kontakt">E-mail:</label>
+                        <input id="kontakt_email_input" class="contact_text_input" type="email" name="kontakt_email" style="width: 250px; border-radius: 5px;" required="" placeholder="przykladowy@mail.com">
+
+                        <label class="label_kontakt">Wiadomość:</label>
+                        <textarea id="kontakt_text_input" class="contact_text_input" name="kontakt_text" style="width:500px; height: 130px; font-size: 1em; border-radius: 5px;" required="" placeholder="Miejsce na Twoją wiadomość. :)"></textarea>
+                        
+                        <label class="label_kontakt">Kod dostępu:</label>
+                        <input id="kontakt_kod_input" class="contact_text_input" type="text" name="kod" style="width: 150px; margin: 5px auto 15px; border-radius: 5px;" required="">
+
+                        <input id="send_msg_btn" class="button" name="wyslij_wiadomosc" type="submit" value="Wyślij">
+                    </form>
+                    
+                    <div id="incorrect_pass_text" style="display: none; color: rgb(255, 41, 41); font-size: 18px; margin: 5px 0 0; padding: 0;"></div>
+                    <script src="kontakt.js"></script>
+                
+                </div>
+                
+                <script src="engine/level1.js"></script>
+                
+            </div>
+            
+            
+            <!-- _-_-_-_-_-_ LEVEL 2 _-_-_-_-_-_ -->
+            
+            
+            <div id="level2" class="level" style='background-image: url("IMG/levels/level2.jpg"); display: none;'>
+                
+                <!-- lewa ściana 
+                <div class="object" style="left: 0px; top: 0px; height: 500px; width: 100px;"></div> -->
+                
+                <!-- prawa dolna ściana (pokój z kluczem) 
+                <div class="object" style="left: 300px; top: 440px; height: 60px; width: 600px;"></div>
+                <div class="object" style="left: 300px; top: 260px; height: 180px; width: 200px;"></div>
+                <div class="object" style="left: 800px; top: 240px; height: 200px; width: 100px;"></div>
+                <div class="object" style="left: 300px; top: 240px; height: 20px; width: 400px;"></div> -->
+                
+                <!-- prawa górna ściana 
+                <div class="object" style="left: 300px; top: 0px; height: 120px; width: 600px;"></div> -->
+                
+                <!-- wejście do pokoju z kluczem -->
+                <div class="object" id="drzwi_do_pokoju" style='left: 700px; top: 245px; height: 10px; width: 100px; background-image: url("IMG/metal-texture.jpg"); border: 2px solid rgb(175, 118, 11);'></div>
+                <div id="kod_do_pokoju"><span style="font-size: 1.5em; font-weight: bold;">Rozwiąż zadanie:</span><br/><br/>
+                    
+                    <span id="zadanie_matematyczne" style="font-size: 1.3em;"></span><br/><br/>
+                    <input type="number" id="zadanie_input" style="width: 130px; height: 20px; padding: 5px; border-radius: 10px; text-align: center;" /><br/><br/>
+                    <input type="button" id="zadanie_btn" class="button" value="Potwierdź" />
+                    
+                </div>
+                
+                <!-- klucz do klapy -->
+                <div class="object" id="klucz_do_klapy" style='left: 630px; top: 330px; height: 40px; width: 40px; background-color: rgba(72, 72, 255, 0); background-image: url("IMG/levels/klucz.png");'></div>
+                
+                <!-- klapa (przejście do levelu 3) -->
+                <div id="klapa_lvl2" class="object" style='left: 140px; top: 5px; height: 100px; width: 120px; background-image: url("IMG/levels/klapazamknieta.png");'></div>
+                
+                <script src="engine/level2.js"></script>
+                
+            </div>
+            
+            
+            <!-- _-_-_-_-_-_ LEVEL 3 _-_-_-_-_-_ -->
+            
+            
+            <div id="level3" class="level" style='background-image: url("IMG/levels/level3_1.jpg"); display: none;'>
+                
+                <!-- lawa do góry 
+                <div class="object" style="left: 0px; top: 0px; height: 200px; width: 900px; background-color: red;"></div>-->
+                
+                <!-- lawa na dole 
+                <div class="object" style="left: 0px; top: 300px; height: 200px; width: 900px; background-color: red;"></div>-->
+                
+                <!-- kod do formularza -->
+                <div class="object" style='left: 840px; top: 225px; height: 50px; width: 40px; background-image: url("IMG/levels/podstawka_final.jpg");'></div>
+                <div id="kod_do_formularza" style='text-align: center; background-image: url("IMG/levels/papyrus.png");'><span style="font-size: 1.5em; font-weight: bold;">GRATULACJE!</span><br/><br/><br/>Twój kod dostępu to:<br/><br/><span id="kod_span" style="font-size: 1.5em; font-weight: bold; letter-spacing: 4px;"></span></div>
+                
+                <!-- znikający chodnik -->
+                <div class="object" id="chodnik1" style='left: 400px; top: 200px; height: 100px; width: 50px; background-image: url("IMG/levels/chowany_chodnik.jpg");'></div>
+                <div class="object" id="chodnik2" style='left: 600px; top: 200px; height: 100px; width: 50px; background-image: url("IMG/levels/chowany_chodnik.jpg");'></div>
+                
+                <!-- portfolio -->
+                <a href="#" target="_blank"><div class="link_portfolio" style='left: 35px; top: 35px; height: 120px; width: 180px; pointer-events: none;'></div></a>
+                <a href="#" target="_blank"><div class="link_portfolio" style='left: 250px; top: 35px; height: 120px; width: 180px; pointer-events: none;'></div></a>
+                <a href="#" target="_blank"><div class="link_portfolio" style='left: 465px; top: 35px; height: 120px; width: 180px; pointer-events: none;'></div></a>
+                <a href="http://destinyflip.net" target="_blank"><div title="www.destinyflip.net" class="link_portfolio" style='left: 680px; top: 35px; height: 120px; width: 180px; background-image: url("IMG/portfolio/destinyflip.png");'></div></a>
+                
+                <a href="#" target="_blank"><div class="link_portfolio" style='left: 35px; top: 345px; height: 120px; width: 180px; pointer-events: none;'></div></a>
+                <a href="#" target="_blank"><div class="link_portfolio" style='left: 250px; top: 345px; height: 120px; width: 180px; pointer-events: none;'></div></a>
+                <a href="#" target="_blank"><div class="link_portfolio" style='left: 465px; top: 345px; height: 120px; width: 180px; pointer-events: none;'></div></a>
+                <a href="http://kroptech.net" target="_blank"><div title="www.kroptech.net" class="link_portfolio" style='left: 680px; top: 345px; height: 120px; width: 180px; background-image: url("IMG/portfolio/kroptech.png");'></div></a>
+                
+                
+                <script src="engine/level3.js"></script>
+                
+            </div>
+            
+            <div style='background-image: url("IMG/levels/level3_2.jpg"); visibility: hidden;'></div>
+            <div style='background-image: url("IMG/levels/level3_3.jpg"); visibility: hidden;'></div>
+            <div style='background-image: url("IMG/levels/level3_4.jpg"); visibility: hidden;'></div>
+            
+            <div style='background-image: url("IMG/bg/bg_level2.jpg"); visibility: hidden;'></div>
+            <div style='background-image: url("IMG/bg/bg_level3.jpg"); visibility: hidden;'></div>
+            
+            <div style='background-image: url("IMG/levels/papyrus.png"); visibility: hidden;'></div>
+            
+            <div id="player"></div>
+            
+        </div>
+        
+    </div>
+	
+</body>
+</html>
