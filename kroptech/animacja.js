@@ -1,3 +1,5 @@
+//OBSŁUGA ANIMACJI KTÓRĄ KOŃCOWO USUNĄŁEM ZE STRONY
+
 setInterval("test()", 10);
 setInterval("koniec()", 500);
 
