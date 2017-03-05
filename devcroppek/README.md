@@ -1,4 +1,8 @@
-Moja pierwsza próba stworzenia czegoś przypominającego prostą grę.
+###[--> Podgląd gry <--](https://croppek.github.io/devcroppek)
+
+---
+
+Jest to moja pierwsza próba stworzenia czegoś przypominającego prostą grę.
 
 Postanowiłem połączyć przyjemne z pożytecznym, dlatego jest to strona z moim portfolio oraz możliwością kontaktu. 
 
