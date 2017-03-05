@@ -1,3 +1,5 @@
+//komentarz
+
 $(document).ready(function(){
     
     $('form').submit(false);
