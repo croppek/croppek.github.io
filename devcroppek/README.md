@@ -1,4 +1,4 @@
-###[--> Podgląd gry <--](https://croppek.github.io/devcroppek)
+### [--> Podgląd gry <--](https://croppek.github.io/devcroppek)
 
 ---
 
@@ -15,4 +15,4 @@ Stworzono z wykorzystaniem:
 * CSS3
 * JavaScript / jQuery
 * PHP
-* + grafiki (GIMP2)
+* grafiki (GIMP2)
