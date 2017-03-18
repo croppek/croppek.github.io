@@ -1,4 +1,4 @@
-###[--> Podgląd strony <--](https://croppek.github.io/kroptech)
+### [--> Podgląd strony <--](https://croppek.github.io/kroptech)
 
 ---
 
