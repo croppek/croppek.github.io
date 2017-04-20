@@ -5,6 +5,9 @@ var wygenerowano = false;
 
 function level3_objects(player_pos, key)
 {
+    var player = $('#player'),
+        kod_do_formularza = $('#kod_do_formularza');
+    
     if(is_dead == false)
     {
         //śmierć po wejściu w lave
@@ -41,19 +44,19 @@ function level3_objects(player_pos, key)
                 $('#kod_span').append(kod_formularza); 
             }
             
-            $('#kod_do_formularza').fadeIn(250);
+            kod_do_formularza.fadeIn(250);
             
         }
         else
         {
-            $('#kod_do_formularza').fadeOut(250);
+            kod_do_formularza.fadeOut(250);
         }
         
         //podest ze zwojem
         if(player_pos['left'] > 788 && player_pos['top'] > 180 && player_pos['top'] < 270 && is_dead == false && key == 68)
         {
-            $('#player').stop();
-            $('#player').css({left: "790px"});
+            player.stop();
+            player.css({left: "790px"});
         }
 
         //powrót do level2
@@ -61,16 +64,16 @@ function level3_objects(player_pos, key)
         {   
             is_dead = true;
 
-            $('#player').hide();
+            player.hide();
 
             $('#level3').fadeOut(500, function(){
                 
                 $('body').css('background-image', 'url("IMG/bg/bg_level2.jpg")');
-                $('#player').css({top: "120px"});
-                $('#player').css({left: "170px"});
+                player.css({top: "120px"});
+                player.css({left: "170px"});
                 $('#level2').fadeIn(500, function(){
 
-                    $('#player').show(250);
+                    player.show(250);
                     is_dead = false;
 
                 });
@@ -81,15 +84,17 @@ function level3_objects(player_pos, key)
 
 function dead()
 {
-    $('#player').stop();
+    var player = $('#player');
+    
+    player.stop();
         
     var miganie = setInterval(function(){
 
-        $('#player').css('opacity', '0.2');
+        player.css('opacity', '0.2');
 
         setTimeout(function(){
 
-            $('#player').css('opacity', '1');
+            player.css('opacity', '1');
 
         }, 200);
 
@@ -98,8 +103,8 @@ function dead()
     setTimeout(function(){
 
         clearInterval(miganie);
-        $('#player').fadeOut(250, function(){
-            $('#player').css('opacity', '1');
+        player.fadeOut(250, function(){
+            player.css('opacity', '1');
         });
 
 
@@ -111,11 +116,11 @@ function dead()
         $('#level3').fadeOut(500, function(){
             
             $('body').css('background-image', 'url("IMG/bg/bg_level1.jpg")');
-            $('#player').css({top: "440px"});
-            $('#player').css({left: "20px"});
+            player.css({top: "440px"});
+            player.css({left: "20px"});
             $('#level1').fadeIn(500, function(){
 
-                $('#player').show(250);
+                player.show(250);
                 is_dead = false;
 
             });
@@ -192,27 +197,29 @@ function getRandomInt(min, max)
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-var bg_num = 0;
+var bg_num = 0,
+    level3 = $('#level3');
+
 
 setInterval(function(){
     
-    if($('#level3').css('display') == 'block')
+    if(level3.css('display') == 'block')
     {
         if(bg_num == 0)
         {
-            $('#level3').css('background-image', 'url("IMG/levels/level3_4.jpg")');
+            level3.css('background-image', 'url("IMG/levels/level3_4.jpg")');
         }
         else if(bg_num == 1)
         {
-            $('#level3').css('background-image', 'url("IMG/levels/level3_3.jpg")');
+            level3.css('background-image', 'url("IMG/levels/level3_3.jpg")');
         }
         else if(bg_num == 2)
         {
-            $('#level3').css('background-image', 'url("IMG/levels/level3_2.jpg")');
+            level3.css('background-image', 'url("IMG/levels/level3_2.jpg")');
         }
         else if(bg_num == 3)
         {
-            $('#level3').css('background-image', 'url("IMG/levels/level3_1.jpg")');
+            level3.css('background-image', 'url("IMG/levels/level3_1.jpg")');
         }
         
         bg_num++;

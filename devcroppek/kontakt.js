@@ -18,7 +18,7 @@ $(document).ready(function(){
         $(this).attr('placeholder', 'przykladowy@mail.com');
     });
     
-    $('#kontakt_text_input').attr('placeholder', 'Miejsce na Twoją wiadomość. :)');
+    $('#kontakt_text_input').attr('placeholder', 'Miejsce na Twoją wiadomość. :) *** Niestety github nie wspiera działania plików PHP przez co wysłanie wiadomości jest niemożliwe.. :( ***');
     $('#kontakt_text_input').focus(function(){
         $(this).attr('placeholder', '');
     });

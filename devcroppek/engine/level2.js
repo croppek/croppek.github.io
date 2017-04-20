@@ -4,14 +4,17 @@ var zadanie_ok = false;
 
 function level2_objects(player_pos, key)
 {
+    var player = $('#player'),
+        kod_do_pokoju = $('#kod_do_pokoju');
+    
     //lewa część poziomu
     if(player_pos['left'] <= 250)
     {
         //lewa ściana
         if(player_pos['left'] < 102 && key == 65)
         {
-            $('#player').stop();
-            $('#player').css({left: "100px"});
+            player.stop();
+            player.css({left: "100px"});
         }
         //klapa do przejścia do lvl3
         else if(player_pos['left'] < 265 && player_pos['left'] >= 100 && player_pos['top'] < 107 && key == 87)
@@ -20,26 +23,26 @@ function level2_objects(player_pos, key)
             {
                 $('#klapa_lvl2').css('background-image', 'url("IMG/levels/klapaotwarta.png")');
                 
-                $('#player').stop();
+                player.stop();
                 
-                $('#player').hide();
+                player.hide();
 
                 $('#level2').fadeOut(500, function(){
                     
                     $('body').css('background-image', 'url("IMG/bg/bg_level3.jpg")');
-                    $('#player').css({top: "225px"});
-                    $('#player').css({left: "50px"});
+                    player.css({top: "225px"});
+                    player.css({left: "50px"});
                     $('#level3').fadeIn(500, function(){
 
-                        $('#player').show(250);
+                        player.show(250);
 
                     });
                 });
             }
             else
             {
-                $('#player').stop();
-                $('#player').css({top: "105px"});
+                player.stop();
+                player.css({top: "105px"});
             }
         }
     }
@@ -53,50 +56,50 @@ function level2_objects(player_pos, key)
             //ścianay dookoła pokoju
             if(player_pos['left'] > 248 && player_pos['left'] < 400 && player_pos['top'] > 190 && key == 68)
             {
-                $('#player').stop();
-                $('#player').css({left: "250px"});
+                player.stop();
+                player.css({left: "250px"});
             }
             else if(player_pos['left'] > 250 && player_pos['left'] < 700 && player_pos['top'] > 188 && player_pos['top'] < 205 && key == 83)
             {
-                $('#player').stop();
-                $('#player').css({top: "190px"});
+                player.stop();
+                player.css({top: "190px"});
             }
             else if(player_pos['left'] > 750 && player_pos['top'] > 188 && key == 83)
             {
-                $('#player').stop();
-                $('#player').css({top: "190px"});
+                player.stop();
+                player.css({top: "190px"});
             }
             else if(player_pos['left'] >= 500 && player_pos['left'] <= 750 && player_pos['top'] > 388 && key == 83)
             {
-                $('#player').stop();
-                $('#player').css({top: "390px"});
+                player.stop();
+                player.css({top: "390px"});
             }
             else if(player_pos['left'] > 748 && player_pos['top'] > 190 && key == 68)
             {
-                $('#player').stop();
-                $('#player').css({left: "750px"});
+                player.stop();
+                player.css({left: "750px"});
             }
             else if(player_pos['left'] < 502 && player_pos['left'] > 480 && player_pos['top'] > 190 && key == 65)
             {
-                $('#player').stop();
-                $('#player').css({left: "500px"});
+                player.stop();
+                player.css({left: "500px"});
             }
             else if(player_pos['left'] < 702 && player_pos['left'] > 680 && player_pos['top'] > 190 && player_pos['top'] < 260 && key == 65)
             {
-                $('#player').stop();
-                $('#player').css({left: "700px"});
+                player.stop();
+                player.css({left: "700px"});
             }
             else if(player_pos['left'] < 700 && player_pos['left'] >= 500 && player_pos['top'] > 210 && player_pos['top'] < 262 && key == 87)
             {
-                $('#player').stop();
-                $('#player').css({top: "260px"});
+                player.stop();
+                player.css({top: "260px"});
             }
             
             //drzwi do pokoju
             if(player_pos['left'] >= 700 && player_pos['left'] <= 750 && player_pos['top'] > 188 && player_pos['top'] < 205 && key == 83 && $('#drzwi_do_pokoju').css('display') == 'block')
             {
-                $('#player').stop();
-                $('#player').css({top: "195px"});
+                player.stop();
+                player.css({top: "195px"});
             }
             
             //klucz do klapy
@@ -111,13 +114,13 @@ function level2_objects(player_pos, key)
             //górna ściana
             if(player_pos['left'] > 248 && player_pos['top'] < 120 && key == 68)
             {
-                $('#player').stop();
-                $('#player').css({left: "250px"});
+                player.stop();
+                player.css({left: "250px"});
             }
             else if(player_pos['left'] > 250 && player_pos['top'] < 122 && key == 87)
             {
-                $('#player').stop();
-                $('#player').css({top: "120px"});
+                player.stop();
+                player.css({top: "120px"});
             }
         }
     }
@@ -125,7 +128,7 @@ function level2_objects(player_pos, key)
     //drzwi do pokoju
     if(player_pos['left'] > 695 && player_pos['left'] < 805 && player_pos['top'] > 170 && player_pos['top'] < 205 && zadanie_ok == false)
     {
-        if($('#kod_do_pokoju').css('display') == 'none')
+        if(kod_do_pokoju.css('display') == 'none')
         {
             var random_zadanie = Math.floor((Math.random() * 10) + 1);
             var zadanie = '';
@@ -182,32 +185,32 @@ function level2_objects(player_pos, key)
             }
             
             $('#zadanie_matematyczne').empty().append(zadanie);
-            $('#kod_do_pokoju').fadeIn(250);
+            kod_do_pokoju.fadeIn(250);
         }
     }
     else
     {
-        if($('#kod_do_pokoju').css('display') == 'block')
+        if(kod_do_pokoju.css('display') == 'block')
         {
-            $('#kod_do_pokoju').fadeOut(250);
+            kod_do_pokoju.fadeOut(250);
         }
     }
     
     //powrót do level1
     if(player_pos['left'] <= 250 && player_pos['left'] >= 100 && player_pos['top'] > 440 && key == 83)
     {
-        $('#player').stop();
+        player.stop();
         
-        $('#player').hide();
+        player.hide();
             
         $('#level2').fadeOut(500, function(){
             
             $('body').css('background-image', 'url("IMG/bg/bg_level1.jpg")');
-            $('#player').css({top: "45px"});
-            $('#player').css({left: "130px"});
+            player.css({top: "45px"});
+            player.css({left: "130px"});
             $('#level1').fadeIn(500, function(){
 
-                $('#player').show(250);
+                player.show(250);
 
             });
         });
